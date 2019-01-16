@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+//
 // Copyright (C) 2019 Paul Ciarlo <paul.ciarlo@gmail.com>.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -18,9 +19,13 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+//
 
 const assert = require('assert');
 
+/**
+ * Return an array containing the longest words in the string by number of characters
+ */
 String.prototype.findLongestWords = function () {
     const tokens = [];
     const regex = /(\S+)\s*/giu;
@@ -50,6 +55,7 @@ function testFindLongestWords() {
     assert.deepStrictEqual('あ  あああ'.findLongestWords(), ['あああ']);
     assert.deepStrictEqual('💩'.findLongestWords(), ['💩']); // test astral characters
     assert.deepStrictEqual('あ あああ 💩💩'.findLongestWords(), ['あああ']); // test word length in characters vs. bytes
+    assert.deepStrictEqual('あ ああ 💩💩'.findLongestWords(), ['ああ', '💩💩']);
 }
 
 if (typeof require !== void 0 && require.main === module) {
