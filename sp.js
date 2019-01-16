@@ -21,8 +21,6 @@
 // SOFTWARE.
 //
 
-const assert = require('assert');
-
 /**
  * Return an array containing the longest words in the string by number of characters
  */
@@ -45,6 +43,7 @@ String.prototype.findLongestWords = function () {
 };
 
 function testFindLongestWords() {
+    const assert = require('assert');
     assert.deepStrictEqual(''.findLongestWords(), []);
     assert.deepStrictEqual('\n'.findLongestWords(), []);
     assert.deepStrictEqual('a'.findLongestWords(), ['a']);
