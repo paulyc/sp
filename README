@@ -1,4 +1,5 @@
 Extend String with a function to return an array containing 
-the longest words in the string by number of characters.
+the longest words in the string by number of printable characters.
+Requires ES6.
 
 To run tests: node sp.js or ./sp.js
