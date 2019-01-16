@@ -35,7 +35,7 @@ String.prototype.findLongestWords = function () {
         // use spread operator to count characters, not bytes, since '💩'.length === 2
         if (prev.length === 0 || [...current].length > [...prev[0]].length) {
             return [current];
-        } else if ([...current].length == [...prev[0]].length) {
+        } else if ([...current].length === [...prev[0]].length) {
             prev.push(current);
         }
         return prev;
